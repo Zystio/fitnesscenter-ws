@@ -8,7 +8,7 @@ import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datamapperlayer.Cli
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datamapperlayer.ClientResponseMapper;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer.ClientRequestModel;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer.ClientResponseModel;
-import com.gouriny.fitnesscenterws.clientmanagementsubdomain.utils.exceptions.NotFoundException;
+import com.gouriny.fitnesscenterws.utils.exceptions.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
