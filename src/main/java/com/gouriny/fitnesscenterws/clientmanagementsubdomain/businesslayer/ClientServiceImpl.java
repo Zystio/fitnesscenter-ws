@@ -42,12 +42,12 @@ public class ClientServiceImpl implements ClientService{
 
     @Override
     public ClientResponseModel addClient(ClientRequestModel clientRequestModel) {
-        Address address = new Address();
-        address.setStreetAddress(clientRequestModel.getStreetAddress());
-        address.setCity(clientRequestModel.getCity());
-        address.setProvince(clientRequestModel.getProvince());
-        address.setCountry(clientRequestModel.getCountry());
-        address.setPostalCode(clientRequestModel.getPostalCode());
+        Address address = new Address(clientRequestModel.getStreetAddress(), clientRequestModel.getCity(), clientRequestModel.getProvince(), clientRequestModel.getCountry(), clientRequestModel.getPostalCode());
+//        address.setStreetAddress(clientRequestModel.getStreetAddress());
+//        address.setCity(clientRequestModel.getCity());
+//        address.setProvince(clientRequestModel.getProvince());
+//        address.setCountry(clientRequestModel.getCountry());
+//        address.setPostalCode(clientRequestModel.getPostalCode());
 
 
         Client client = clientRequestMapper.requestModelToEntity(clientRequestModel, new ClientIdentifier(), address);

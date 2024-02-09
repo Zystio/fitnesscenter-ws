@@ -40,12 +40,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeResponseModel addEmployee(EmployeeRequestModel employeeRequestModel) {
-        Address address = new Address();
-        address.setStreetAddress(employeeRequestModel.getStreetAddress());
-        address.setCity(employeeRequestModel.getCity());
-        address.setProvince(employeeRequestModel.getProvince());
-        address.setCountry(employeeRequestModel.getCountry());
-        address.setPostalCode(employeeRequestModel.getPostalCode());
+        Address address = new Address(employeeRequestModel.getStreetAddress(), employeeRequestModel.getCity(), employeeRequestModel.getProvince(), employeeRequestModel.getCountry(), employeeRequestModel.getPostalCode());
+
 
         Employee employee = employeeRequestMapper.requestModelToEntity(employeeRequestModel, new EmployeeIdentifier(), address);
         return employeeResponseMapper.entityToResponseModel(employeeRepository.save(employee));

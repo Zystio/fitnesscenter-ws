@@ -1,11 +1,34 @@
 @startuml
 'https://plantuml.com/sequence-diagram
+hide circle
+top to bottom direction
+!define ENTITY(entityName) class entityName << Entity >>
+!define AGGREGATE(aggregateName) class aggregateName << Aggregate >>
+!define AGGREGATE_ROOT(aggregateRootName) class aggregateRootName << Aggregate Root >>
+!define AGGREGATE_ROOT_ENTITY(aggregateRootEntityName) class aggregateRootEntityName << Aggregate Root >> << Entity >>
+!define VALUE_OBJECT(valueObjectName) class valueObjectName << Value Object >>
 
-autonumber
+!pragma useVerticalIf on
+skinparam dpi 350
+skinparam packageStyle rectangle
+skinparam rectangle {
+    BackgroundColor #f7f4eb
+    BorderColor Black
+}
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+rectangle "Fitness Center" as BoundedContextCarDealership #line.dashed {
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+ Package "Fitness Center Management Sub-domain" <<Rectangle>> #Lavender {
+
+        ENTITY(Client) #lightblue {
+            + string Name
+            + string Email
+            + string Phone
+            + string Address
+            + string City
+            + string State
+            + string Zip
+            + string Country
+        }
+}
 @enduml
