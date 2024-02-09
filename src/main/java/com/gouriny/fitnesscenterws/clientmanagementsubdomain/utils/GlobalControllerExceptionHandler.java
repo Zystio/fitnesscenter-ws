@@ -1,7 +1,7 @@
-package com.gouriny.fitnesscenterws.utils;
+package com.gouriny.fitnesscenterws.clientmanagementsubdomain.utils;
 
-import com.gouriny.fitnesscenterws.utils.exceptions.InvalidInputException;
-import com.gouriny.fitnesscenterws.utils.exceptions.NotFoundException;
+import com.gouriny.fitnesscenterws.clientmanagementsubdomain.utils.exceptions.InvalidInputException;
+import com.gouriny.fitnesscenterws.clientmanagementsubdomain.utils.exceptions.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

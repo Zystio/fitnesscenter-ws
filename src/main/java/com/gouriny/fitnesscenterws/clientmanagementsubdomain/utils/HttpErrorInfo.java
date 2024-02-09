@@ -1,4 +1,4 @@
-package com.gouriny.fitnesscenterws.utils;
+package com.gouriny.fitnesscenterws.clientmanagementsubdomain.utils;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

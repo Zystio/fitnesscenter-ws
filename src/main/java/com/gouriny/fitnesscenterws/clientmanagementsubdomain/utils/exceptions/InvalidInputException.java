@@ -1,4 +1,4 @@
-package com.gouriny.fitnesscenterws.utils.exceptions;
+package com.gouriny.fitnesscenterws.clientmanagementsubdomain.utils.exceptions;
 
 public class InvalidInputException extends RuntimeException {
 
