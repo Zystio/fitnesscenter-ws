@@ -10,5 +10,7 @@ entities of this project. The project is setup using SpringBoot and Java, as wel
 
 ## Code
 //TODO Make it a RESTful app with HATOAS
+
 //TODO Implement membership and purchases subdomains
+
 //TODO Understand how the aggregate will work and define and implement an aggregate invariant.
