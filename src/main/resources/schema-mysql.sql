@@ -39,3 +39,14 @@ CREATE TABLE IF NOT EXISTS employee_phonenumbers (
     type VARCHAR(50),
     number VARCHAR(50)
 );
+
+CREATE TABLE IF NOT EXISTS memberships(
+                                           id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                           membership_id VARCHAR(36),
+    type VARCHAR(50),
+    status VARCHAR(50),
+    billing_type VARCHAR(50),
+    card_fee DECIMAL(10, 2),
+    registration_fee DECIMAL(10, 2),
+    monthly_fee DECIMAL(10, 2)
+    );
