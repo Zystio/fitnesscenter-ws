@@ -1,6 +1,6 @@
-create table if not exists clients (
+create table if not exists members (
                                        id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                                       client_id VARCHAR(36),
+                                       member_id VARCHAR(36),
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     email_address VARCHAR(50),
@@ -28,8 +28,8 @@ create table if not exists employees (
     commission_rate DECIMAL(10, 2)
     );
 
-CREATE TABLE IF NOT EXISTS client_phonenumbers (
-    client_id INTEGER,
+CREATE TABLE IF NOT EXISTS member_phonenumbers (
+    member_id INTEGER,
     type VARCHAR(50),
     number VARCHAR(50)
 );

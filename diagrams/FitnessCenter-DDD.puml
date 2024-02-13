@@ -18,17 +18,41 @@ skinparam rectangle {
 
 rectangle "Fitness Center" as BoundedContextCarDealership #line.dashed {
 
- Package "Fitness Center Management Sub-domain" <<Rectangle>> #Lavender {
+ Package "Client Management Subdomain" <<Rectangle>> #plum{
 
-        ENTITY(Client) #lightblue {
-            + string Name
-            + string Email
-            + string Phone
-            + string Address
-            + string City
-            + string State
-            + string Zip
-            + string Country
+        ENTITY(Client) #orchid {
+            + string: firstName
+            + string: lastName
+            + string: membershipId
+            + string: emailAddress
+            + string: phoneNumber
+            + string: streetAddress
+            + string: city
+            + string: province
+            + string: country
+            + string: postalCode
         }
-}
+        VALUE_OBJECT(ClientIdentifier) #mediumslateblue{
+            + clientId : UUID
+        }
+
+        VALUE_OBJECT(Purchases) #Bisque{
+            purchases: list[PurchaseIdentifier]
+        }
+
+        VALUE_OBJECT(ClientAddress) #Bisque{
+                + street: String
+                + city: String
+                + province: String
+                + country: String
+        }
+        VALUE_OBJECT(ClientPhoneNumber) #Bisque {
+            + type: String
+            + number: String
+        }
+
+        Client o--> "1" ClientAddress
+        Client o--> "1" ClientPhoneNumber
+        Client "1" o--> "1" ClientIdentifier
+        Client o--> "1" Purchases
 @enduml

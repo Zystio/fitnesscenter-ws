@@ -8,16 +8,16 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "clients")
+@Table(name = "members")
 @Getter
-public class Client {
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id; //private id
 
     @Embedded
-    private ClientIdentifier clientIdentifier; //public id
+    private MemberIdentifier memberIdentifier; //public id
 
     private String firstName;
     private String lastName;
@@ -27,15 +27,15 @@ public class Client {
     private Address address;
 
     @ElementCollection(fetch = FetchType.LAZY)
-    @CollectionTable(name = "client_phonenumbers", joinColumns = @JoinColumn(name = "client_id"))
+    @CollectionTable(name = "member_phonenumbers", joinColumns = @JoinColumn(name = "member_id"))
     private List<PhoneNumber> phoneNumbers;
 
-    public Client(){
+    public Member(){
 
     }
 
-    public Client(String firstName, String lastName, String emailAddress, Address address, List<PhoneNumber> phoneNumbers) {
-        this.clientIdentifier = new ClientIdentifier();
+    public Member(String firstName, String lastName, String emailAddress, Address address, List<PhoneNumber> phoneNumbers) {
+        this.memberIdentifier = new MemberIdentifier();
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;

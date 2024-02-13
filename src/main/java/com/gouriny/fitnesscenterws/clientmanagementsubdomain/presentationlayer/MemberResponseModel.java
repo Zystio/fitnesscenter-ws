@@ -11,9 +11,9 @@ import java.util.List;
 @Value
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class ClientResponseModel {
-    String clientId;
-    //TODO ADD MEMBERSHIPID
+public class MemberResponseModel {
+    String memberId;
+    //TODO ADD MEMBERSHIPID (MAYBE)
     String firstName;
     String lastName;
     List<PhoneNumber> phoneNumbers;

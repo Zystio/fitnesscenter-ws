@@ -7,12 +7,12 @@ import java.util.UUID;
 
 @Embeddable
 @Getter
-public class ClientIdentifier {
+public class MemberIdentifier {
 
-    private String clientId;
+    private String memberId;
 
-    public ClientIdentifier() {
-        this.clientId = UUID.randomUUID().toString();
+    public MemberIdentifier() {
+        this.memberId = UUID.randomUUID().toString();
     }
 
     //no need for a getter, as it is already annotated with @Getter

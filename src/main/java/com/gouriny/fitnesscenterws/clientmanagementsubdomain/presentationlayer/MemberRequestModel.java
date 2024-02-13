@@ -11,7 +11,7 @@ import java.util.List;
 @Value
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class ClientRequestModel {
+public class MemberRequestModel {
     String firstName;
     String lastName;
     List<PhoneNumber> phoneNumbers;
