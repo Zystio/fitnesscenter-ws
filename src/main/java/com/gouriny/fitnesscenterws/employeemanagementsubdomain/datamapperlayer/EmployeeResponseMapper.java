@@ -1,11 +1,22 @@
 package com.gouriny.fitnesscenterws.employeemanagementsubdomain.datamapperlayer;
 
 import com.gouriny.fitnesscenterws.employeemanagementsubdomain.datalayer.Employee;
+import com.gouriny.fitnesscenterws.employeemanagementsubdomain.presentationlayer.EmployeeController;
 import com.gouriny.fitnesscenterws.employeemanagementsubdomain.presentationlayer.EmployeeResponseModel;
+import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.Membership;
+import com.gouriny.fitnesscenterws.membershipsubdomain.presentationlayer.MembershipController;
+import com.gouriny.fitnesscenterws.membershipsubdomain.presentationlayer.MembershipResponseModel;
+import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.springframework.hateoas.Link;
 
 import java.util.List;
+import java.util.UUID;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Mapper(componentModel = "spring")
 public interface EmployeeResponseMapper {
@@ -20,6 +31,15 @@ public interface EmployeeResponseMapper {
     EmployeeResponseModel entityToResponseModel(Employee employee);
 
     List<EmployeeResponseModel> entityListToResponseModelList(List<Employee> employees);
+
+    @AfterMapping
+    default void addLinks(@MappingTarget EmployeeResponseModel model, Employee employee){
+        Link selfLink =
+                linkTo(methodOn(EmployeeController.class)
+                        .getEmployeeByEmployeeId(UUID.fromString(model.getEmployeeId())))
+                        .withSelfRel();
+        model.add(selfLink);
+    }
 
 }
 

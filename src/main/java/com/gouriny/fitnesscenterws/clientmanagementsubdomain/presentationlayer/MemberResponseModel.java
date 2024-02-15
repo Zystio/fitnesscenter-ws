@@ -1,19 +1,16 @@
 package com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer;
 
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.PhoneNumber;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Value;
+import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.util.List;
 
-@Value
-@Builder
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class MemberResponseModel {
+@Data
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=false)
+public class MemberResponseModel extends RepresentationModel<MemberResponseModel> {
     String memberId;
-    //TODO ADD MEMBERSHIPID (MAYBE)
     String firstName;
     String lastName;
     List<PhoneNumber> phoneNumbers;

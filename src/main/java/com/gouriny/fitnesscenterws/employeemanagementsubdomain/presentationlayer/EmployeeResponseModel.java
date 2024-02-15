@@ -1,17 +1,15 @@
 package com.gouriny.fitnesscenterws.employeemanagementsubdomain.presentationlayer;
 
 import com.gouriny.fitnesscenterws.employeemanagementsubdomain.datalayer.PhoneNumber;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Value;
+import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.util.List;
 
-@Value
-@Builder
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class EmployeeResponseModel {
+@Data
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=false)
+public class EmployeeResponseModel extends RepresentationModel<EmployeeResponseModel> {
     String employeeId;
     String firstName;
     String lastName;

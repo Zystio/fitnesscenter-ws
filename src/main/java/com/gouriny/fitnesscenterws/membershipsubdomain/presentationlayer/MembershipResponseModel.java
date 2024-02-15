@@ -1,14 +1,12 @@
 package com.gouriny.fitnesscenterws.membershipsubdomain.presentationlayer;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Value;
+import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
-@Value
-@Builder
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class MembershipResponseModel {
+@Data
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=false)
+public class MembershipResponseModel extends RepresentationModel<MembershipResponseModel> {
 
     String membershipId;
     String type;

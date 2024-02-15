@@ -1,11 +1,19 @@
 package com.gouriny.fitnesscenterws.clientmanagementsubdomain.datamapperlayer;
 
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.Member;
+import com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer.MemberController;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer.MemberResponseModel;
+import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.springframework.hateoas.Link;
 
 import java.util.List;
+import java.util.UUID;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Mapper(componentModel = "spring")
 public interface MemberResponseMapper {
@@ -21,4 +29,13 @@ public interface MemberResponseMapper {
     MemberResponseModel entityToResponseModel(Member member);
 
     List<MemberResponseModel> entityListToResponseModelList(List<Member> members);
+
+    @AfterMapping
+    default void addLinks(@MappingTarget MemberResponseModel model, Member member){
+        Link selfLink =
+                linkTo(methodOn(MemberController.class)
+                        .getMemberByMemberId(UUID.fromString(model.getMemberId())))
+                        .withSelfRel();
+        model.add(selfLink);
+    }
 }
