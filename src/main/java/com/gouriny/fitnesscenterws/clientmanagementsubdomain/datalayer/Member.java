@@ -1,5 +1,6 @@
 package com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer;
 
+import com.gouriny.fitnesscenterws.common.MemberIdentifier;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;

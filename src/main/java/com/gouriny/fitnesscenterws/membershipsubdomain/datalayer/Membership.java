@@ -1,5 +1,6 @@
 package com.gouriny.fitnesscenterws.membershipsubdomain.datalayer;
 
+import com.gouriny.fitnesscenterws.common.MembershipIdentifier;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -18,7 +19,7 @@ public class Membership {
     private MembershipIdentifier membershipIdentifier;
 
     @Enumerated(EnumType.STRING)
-    private Type type;
+    private Type membershipType;
 
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -34,9 +35,9 @@ public class Membership {
 
     }
 
-    public Membership(Type type, Status status, BillingType billingType, Double cardFee, Double registrationFee, Double monthlyFee) {
+    public Membership(Type membershipType, Status status, BillingType billingType, Double cardFee, Double registrationFee, Double monthlyFee) {
         this.membershipIdentifier = new MembershipIdentifier();
-        this.type = type;
+        this.membershipType = membershipType;
         this.status = status;
         this.billingType = billingType;
         this.cardFee = cardFee;

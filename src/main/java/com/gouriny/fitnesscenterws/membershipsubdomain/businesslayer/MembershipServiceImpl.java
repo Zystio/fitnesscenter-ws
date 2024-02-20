@@ -1,12 +1,7 @@
 package com.gouriny.fitnesscenterws.membershipsubdomain.businesslayer;
 
-import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.Address;
-import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.Member;
-import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.MemberIdentifier;
-import com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer.MemberRequestModel;
-import com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer.MemberResponseModel;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.Membership;
-import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.MembershipIdentifier;
+import com.gouriny.fitnesscenterws.common.MembershipIdentifier;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.MembershipRepository;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datamapperlayer.MembershipRequestMapper;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datamapperlayer.MembershipResponseMapper;

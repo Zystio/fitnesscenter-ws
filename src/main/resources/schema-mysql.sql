@@ -43,10 +43,21 @@ CREATE TABLE IF NOT EXISTS employee_phonenumbers (
 CREATE TABLE IF NOT EXISTS memberships(
                                            id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
                                            membership_id VARCHAR(36),
-    type VARCHAR(50),
+    membership_type VARCHAR(50),
     status VARCHAR(50),
     billing_type VARCHAR(50),
     card_fee DECIMAL(10, 2),
     registration_fee DECIMAL(10, 2),
     monthly_fee DECIMAL(10, 2)
+    );
+
+CREATE TABLE if NOT EXISTS purchases(
+                                        id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                        purchase_id VARCHAR(36),
+    member_id VARCHAR(36),
+    membership_id VARCHAR(36),
+    employee_id VARCHAR(36),
+    payment_type VARCHAR(50),
+    credit_card_type VARCHAR(50),
+    start_date DATE
     );

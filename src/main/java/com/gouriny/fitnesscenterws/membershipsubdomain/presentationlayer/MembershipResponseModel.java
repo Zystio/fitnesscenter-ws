@@ -9,7 +9,7 @@ import org.springframework.hateoas.RepresentationModel;
 public class MembershipResponseModel extends RepresentationModel<MembershipResponseModel> {
 
     String membershipId;
-    String type;
+    String membershipType;
     String status;
     String billingType;
     Double cardFee;

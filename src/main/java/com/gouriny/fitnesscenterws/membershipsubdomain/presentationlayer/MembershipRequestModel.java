@@ -10,7 +10,7 @@ import lombok.Value;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class MembershipRequestModel {
 
-    String type;
+    String membershipType;
     String status;
     String billingType;
     Double cardFee;

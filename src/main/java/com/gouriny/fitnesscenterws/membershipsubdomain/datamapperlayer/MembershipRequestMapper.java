@@ -2,7 +2,7 @@ package com.gouriny.fitnesscenterws.membershipsubdomain.datamapperlayer;
 
 
 import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.Membership;
-import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.MembershipIdentifier;
+import com.gouriny.fitnesscenterws.common.MembershipIdentifier;
 import com.gouriny.fitnesscenterws.membershipsubdomain.presentationlayer.MembershipRequestModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

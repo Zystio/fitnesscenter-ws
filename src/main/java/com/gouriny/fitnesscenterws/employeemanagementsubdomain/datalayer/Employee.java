@@ -1,5 +1,6 @@
 package com.gouriny.fitnesscenterws.employeemanagementsubdomain.datalayer;
 
+import com.gouriny.fitnesscenterws.common.EmployeeIdentifier;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;

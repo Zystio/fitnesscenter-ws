@@ -2,7 +2,7 @@ package com.gouriny.fitnesscenterws.clientmanagementsubdomain.businesslayer;
 
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.Address;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.Member;
-import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.MemberIdentifier;
+import com.gouriny.fitnesscenterws.common.MemberIdentifier;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer.MemberRepository;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datamapperlayer.MemberRequestMapper;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.datamapperlayer.MemberResponseMapper;

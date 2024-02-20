@@ -1,4 +1,4 @@
-package com.gouriny.fitnesscenterws.clientmanagementsubdomain.datalayer;
+package com.gouriny.fitnesscenterws.common;
 
 import jakarta.persistence.Embeddable;
 import lombok.Getter;
