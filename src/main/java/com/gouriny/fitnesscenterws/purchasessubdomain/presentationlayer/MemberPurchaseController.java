@@ -1,11 +1,9 @@
 package com.gouriny.fitnesscenterws.purchasessubdomain.presentationlayer;
 
 import com.gouriny.fitnesscenterws.purchasessubdomain.businesslayer.PurchaseService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,8 +17,29 @@ public class MemberPurchaseController {
         this.purchaseService = purchaseService;
     }
 
-    @GetMapping()
+    @GetMapping(produces = "application/json")
     public ResponseEntity<List<PurchaseResponseModel>> getAllPurchasesForMember (@PathVariable String memberId) {
         return ResponseEntity.ok().body(purchaseService.getAllPurchasesForMember(memberId));
+    }
+
+    @GetMapping(value ="/{purchaseId}", produces = "application/json")
+    public ResponseEntity<PurchaseResponseModel> getPurchaseForMemberByPurchaseId (@PathVariable String memberId, @PathVariable String purchaseId) {
+        return ResponseEntity.ok().body(purchaseService.getMemberPurchaseByPurchaseId(memberId, purchaseId));
+    }
+
+    @PostMapping(produces = "application/json", consumes = "application/json")
+    public ResponseEntity<PurchaseResponseModel> addPurchaseToMember (@RequestBody PurchaseRequestModel purchaseRequestModel, @PathVariable String memberId) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(purchaseService.addPurchaseToMember(purchaseRequestModel, memberId));
+    }
+
+    @PutMapping(value ="/{purchaseId}", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<PurchaseResponseModel> updateMemberPurchase (@RequestBody PurchaseRequestModel purchaseRequestModel, @PathVariable String memberId, @PathVariable String purchaseId) {
+        return ResponseEntity.status(HttpStatus.OK).body(purchaseService.updateMemberPurchase(purchaseRequestModel, memberId, purchaseId));
+    }
+
+    @DeleteMapping(value = "/{purchaseId}")
+    public ResponseEntity<Void> removePurchaseFromCustomer (@PathVariable String memberId, @PathVariable String purchaseId) {
+        purchaseService.removePurchaseFromCustomer(memberId, purchaseId);
+        return ResponseEntity.noContent().build();
     }
 }

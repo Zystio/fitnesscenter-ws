@@ -4,6 +4,7 @@ import com.gouriny.fitnesscenterws.common.EmployeeIdentifier;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Data
 @Table(name="employees")
 @Getter
+@NoArgsConstructor
 public class Employee {
 
     @Id
@@ -38,9 +40,11 @@ public class Employee {
     private Address address;
 
 
-    public Employee() {
+    public Employee(String employeeId) {
 
     }
+
+
 
     public Employee(String firstName, String lastName, Address address, String emailAddress, Double salary, Double commissionRate, Department department, List<PhoneNumber> phoneNumbers) {
         this.employeeIdentifier = new EmployeeIdentifier();

@@ -10,4 +10,12 @@ public interface PurchaseService {
 
     List<PurchaseResponseModel> getAllPurchasesForMember(String memberId);
 
+    PurchaseResponseModel getMemberPurchaseByPurchaseId(String memberId, String purchaseId);
+
+    PurchaseResponseModel addPurchaseToMember(PurchaseRequestModel purchaseRequestModel, String memberId);
+
+    PurchaseResponseModel updateMemberPurchase(PurchaseRequestModel purchaseRequestModel, String memberId, String purchaseId);
+
+    void removePurchaseFromCustomer(String memberId, String purchaseId);
+
 }

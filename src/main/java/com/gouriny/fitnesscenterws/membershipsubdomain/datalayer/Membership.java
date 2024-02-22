@@ -4,11 +4,13 @@ import com.gouriny.fitnesscenterws.common.MembershipIdentifier;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "memberships")
 @Data
 @Getter
+@NoArgsConstructor
 public class Membership {
 
     @Id
@@ -31,7 +33,7 @@ public class Membership {
     private Double registrationFee;
     private Double monthlyFee;
 
-    public Membership(){
+    public Membership(String membershipId){
 
     }
 

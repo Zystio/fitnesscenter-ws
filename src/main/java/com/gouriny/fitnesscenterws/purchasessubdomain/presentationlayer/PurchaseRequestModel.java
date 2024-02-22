@@ -18,20 +18,10 @@ public class PurchaseRequestModel {
 
 //    private String purchaseId;
     private String membershipId;
-    private String membershipType;
 
     private String memberId;
-    private String memberFirstName;
-    private String memberLastName;
 
     private String employeeId;
-    private String employeeFirstName;
-    private String employeeLastName;
-
-    private Status status;
-    private Double cardFee;
-    private Double registrationFee;
-    private Double monthlyFee;
 
     private PaymentType paymentType;
     private CreditCardType creditCardType;

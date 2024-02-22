@@ -6,14 +6,13 @@ import com.gouriny.fitnesscenterws.common.MembershipIdentifier;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import lombok.Getter;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "purchases")
-@Getter
 @Data
+
 public class Purchase {
 
     @Id

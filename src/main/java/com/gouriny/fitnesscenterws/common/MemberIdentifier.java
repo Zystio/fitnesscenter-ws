@@ -15,5 +15,7 @@ public class MemberIdentifier {
         this.memberId = UUID.randomUUID().toString();
     }
 
+
+
     //no need for a getter, as it is already annotated with @Getter
 }

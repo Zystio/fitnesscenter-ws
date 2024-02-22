@@ -6,8 +6,8 @@ insert into members (member_id, first_name, last_name, email_address, street_add
 insert into employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) values ('e3540a89-cb47-4c96-888e-ff96708db4d8', 'John', 'Doe', 'johndoe@gmail.com', 'SALES', '6753 Karmine St.', 'Montreal', 'Québec', 'Canada', 'J4Z0J2', 25000.00, 0.10);
 
 insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, monthly_fee) values ('a3540a89-cb47-4c96-888e-ff96708db4d8', 'VIP', 'Active', 'MONTHLY',19.99,59.99,24.99);
--- insert into memberships (membership_id, type, status, billingType, cardFee, registrationFee, monthlyFee) values ('m8d41d17-68f9-4b2a-8a87-55db7d13d47f', 'REGULAR', 'Active', 'MONTHLY',19.99,69.99,14.99);
--- insert into memberships (membership_id, type, status, billingType, cardFee, registrationFee, monthlyFee) values ('m8759f44-fd54-4c72-91a6-c216ab6eb52c', 'Athletics', 'Active', 'MONTHLY',0.00, 39.99,99.99);
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, monthly_fee) values ('m8d41d17-68f9-4b2a-8a87-55db7d13d47f', 'Regular', 'Active', 'MONTHLY',19.99,69.99,14.99);
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, monthly_fee) values ('m8759f44-fd54-4c72-91a6-c216ab6eb52c', 'Athletics', 'Active', 'MONTHLY',0.00, 39.99,99.99);
 
 insert into member_phonenumbers(member_id, type, number)
 values (1, 'WORK', '515-555-5555');
