@@ -9,6 +9,7 @@ import com.gouriny.fitnesscenterws.employeemanagementsubdomain.datalayer.Employe
 import com.gouriny.fitnesscenterws.employeemanagementsubdomain.datalayer.EmployeeRepository;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.Membership;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.MembershipRepository;
+import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.Status;
 import com.gouriny.fitnesscenterws.purchasessubdomain.datalayer.Purchase;
 import com.gouriny.fitnesscenterws.purchasessubdomain.datalayer.PurchaseIdentifier;
 import com.gouriny.fitnesscenterws.purchasessubdomain.datalayer.PurchaseRepository;
@@ -165,6 +166,11 @@ public class PurchaseServiceImpl implements PurchaseService {
 
     }
 
+
+    //we won't be removing the purchase from the customer
+    //instead, we will be setting the membership status to expired
+    //this is because we want to keep the purchase history
+    //and also, we want to keep the membership details, in case they want to renew their membership
     @Override
     public void removePurchaseFromCustomer(String memberId, String purchaseId) {
 
@@ -178,7 +184,14 @@ public class PurchaseServiceImpl implements PurchaseService {
             throw new NotFoundException("PurchaseId provided is unknown" + purchaseId);
         }
 
-        purchaseRepository.delete(purchase);
+        Membership membership = membershipRepository.findByMembershipIdentifier_MembershipId(purchase.getMembershipIdentifier().getMembershipId());
+        if (membership == null) {
+            throw new NotFoundException("MembershipId provided is invalid" + purchase.getMembershipIdentifier().getMembershipId());
+        }
+
+        membership.setStatus(Status.valueOf("EXPIRED"));
+
+
     }
 
 

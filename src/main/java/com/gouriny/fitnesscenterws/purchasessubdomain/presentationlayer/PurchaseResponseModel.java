@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDate;
 
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 
-public class PurchaseResponseModel {
+public class PurchaseResponseModel extends RepresentationModel<PurchaseResponseModel>{
     private String purchaseId;
 
     private String membershipId;
@@ -30,9 +31,12 @@ public class PurchaseResponseModel {
     private String employeeLastName;
 
     private Status status;
+
     private Double cardFee;
     private Double registrationFee;
-    private Double monthlyFee;
+
+    private Double payment;
+    private String paymentDueDate;
 
     private PaymentType paymentType;
     private CreditCardType creditCardType;

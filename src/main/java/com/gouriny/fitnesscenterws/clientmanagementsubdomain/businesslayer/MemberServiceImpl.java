@@ -63,11 +63,18 @@ public class MemberServiceImpl implements MemberService {
             throw new NotFoundException("No client found with ID: " + memberId); // later thrown an exception
         }
 
-        Member member = memberRequestMapper.requestModelToEntity(memberRequestModel, existingMember.getMemberIdentifier(), existingMember.getAddress());
+
+        Member member = memberRequestMapper.requestModelToEntity(memberRequestModel,
+                existingMember.getMemberIdentifier(), new Address(memberRequestModel.getStreetAddress(),
+                        memberRequestModel.getCity(), memberRequestModel.getProvince(), memberRequestModel.getCountry(),
+                        memberRequestModel.getPostalCode()));
 
         member.setId(existingMember.getId());
 
         return memberResponseMapper.entityToResponseModel(memberRepository.save(member));
+
+
+
     }
 
     @Override

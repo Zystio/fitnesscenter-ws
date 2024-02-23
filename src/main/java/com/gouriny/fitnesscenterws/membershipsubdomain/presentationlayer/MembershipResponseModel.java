@@ -12,7 +12,10 @@ public class MembershipResponseModel extends RepresentationModel<MembershipRespo
     String membershipType;
     String status;
     String billingType;
+
     Double cardFee;
     Double registrationFee;
-    Double monthlyFee;
+
+    Double payment;
+    String paymentDueDate;
 }

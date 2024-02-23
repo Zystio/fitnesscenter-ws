@@ -1,8 +1,10 @@
 package com.gouriny.fitnesscenterws.membershipsubdomain.businesslayer;
 
+import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.InitialFees;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.Membership;
 import com.gouriny.fitnesscenterws.common.MembershipIdentifier;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.MembershipRepository;
+import com.gouriny.fitnesscenterws.membershipsubdomain.datalayer.NextPayment;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datamapperlayer.MembershipRequestMapper;
 import com.gouriny.fitnesscenterws.membershipsubdomain.datamapperlayer.MembershipResponseMapper;
 import com.gouriny.fitnesscenterws.membershipsubdomain.presentationlayer.MembershipRequestModel;
@@ -37,7 +39,10 @@ public class MembershipServiceImpl implements MembershipService{
     }
     @Override
     public MembershipResponseModel addMembership(MembershipRequestModel membershipRequestModel) {
-        Membership membership = membershipRequestMapper.requestModelToEntity(membershipRequestModel, new MembershipIdentifier());
+        InitialFees initialFees = new InitialFees(membershipRequestModel.getCardFee(), membershipRequestModel.getRegistrationFee());
+        NextPayment nextPayment = new NextPayment(membershipRequestModel.getPayment(), membershipRequestModel.getPaymentDueDate());
+
+        Membership membership = membershipRequestMapper.requestModelToEntity(membershipRequestModel, new MembershipIdentifier(), initialFees, nextPayment);
         return membershipResponseMapper.entityToResponseModel(membershipRepository.save(membership));
     }
 
@@ -48,8 +53,10 @@ public class MembershipServiceImpl implements MembershipService{
         if (existingMembership == null){
             throw new NotFoundException("No membership found with ID: " + membershipId); // later thrown an exception
         }
-        Membership membership = membershipRequestMapper.requestModelToEntity(membershipRequestModel, existingMembership.getMembershipIdentifier());
+        Membership membership = membershipRequestMapper.requestModelToEntity(membershipRequestModel, existingMembership.getMembershipIdentifier(), new InitialFees(membershipRequestModel.getCardFee(), membershipRequestModel.getRegistrationFee()), new NextPayment(membershipRequestModel.getPayment(), membershipRequestModel.getPaymentDueDate()));
         membership.setId(existingMembership.getId());
+//        membership.setInitialFees(existingMembership.getInitialFees());
+//        membership.setNextPayment(existingMembership.getNextPayment());
 
         return membershipResponseMapper.entityToResponseModel(membershipRepository.save(membership));
     }

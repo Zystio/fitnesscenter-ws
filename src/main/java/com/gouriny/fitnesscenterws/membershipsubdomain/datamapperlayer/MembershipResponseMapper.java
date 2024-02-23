@@ -24,6 +24,12 @@ public interface MembershipResponseMapper {
 
     @Mapping(expression = "java(membership.getMembershipIdentifier().getMembershipId())", target = "membershipId")
 
+    @Mapping(expression = "java(membership.getInitialFees().getCardFee())", target = "cardFee")
+    @Mapping(expression = "java(membership.getInitialFees().getRegistrationFee())", target = "registrationFee")
+
+    @Mapping(expression = "java(membership.getNextPayment().getPayment())", target = "payment")
+    @Mapping(expression = "java(membership.getNextPayment().getPaymentDueDate())", target = "paymentDueDate")
+
     MembershipResponseModel entityToResponseModel(Membership membership);
     List<MembershipResponseModel> entityListToResponseModelList(List<Membership> memberships);
 

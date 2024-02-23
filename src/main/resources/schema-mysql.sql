@@ -9,7 +9,6 @@ create table if not exists members (
     province VARCHAR (50),
     country VARCHAR (50),
     postal_code VARCHAR (9)
---     membership_id VARCHAR(36) add later when membership is created
     );
 
 create table if not exists employees (
@@ -46,9 +45,12 @@ CREATE TABLE IF NOT EXISTS memberships(
     membership_type VARCHAR(50),
     status VARCHAR(50),
     billing_type VARCHAR(50),
+
     card_fee DECIMAL(10, 2),
     registration_fee DECIMAL(10, 2),
-    monthly_fee DECIMAL(10, 2)
+
+    payment DECIMAL(10, 2),
+    payment_due_date VARCHAR(20)
     );
 
 CREATE TABLE if NOT EXISTS purchases(

@@ -13,7 +13,11 @@ public class MembershipRequestModel {
     String membershipType;
     String status;
     String billingType;
+
     Double cardFee;
     Double registrationFee;
-    Double monthlyFee;
+
+    Double payment;
+    String paymentDueDate;
+
 }

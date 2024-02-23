@@ -56,7 +56,10 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new NotFoundException("No employee found with ID: " + employeeId);
         }
 
-        Employee employee = employeeRequestMapper.requestModelToEntity(employeeRequestModel, existingEmployee.getEmployeeIdentifier(), existingEmployee.getAddress());
+        Employee employee = employeeRequestMapper.requestModelToEntity(employeeRequestModel, existingEmployee.getEmployeeIdentifier(),
+                new Address(employeeRequestModel.getStreetAddress(), employeeRequestModel.getCity(), employeeRequestModel.getProvince(),
+                        employeeRequestModel.getCountry(), employeeRequestModel.getPostalCode()));
+
         employee.setId(existingEmployee.getId());
         return employeeResponseMapper.entityToResponseModel(employeeRepository.save(employee));
     }

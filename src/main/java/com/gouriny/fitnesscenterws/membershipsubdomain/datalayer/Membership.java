@@ -29,22 +29,30 @@ public class Membership {
     @Enumerated(EnumType.STRING)
     private BillingType billingType;
 
-    private Double cardFee;
-    private Double registrationFee;
-    private Double monthlyFee;
+    @Embedded
+    private InitialFees initialFees;
+//    private Double cardFee;
+//    private Double registrationFee;
+
+    @Embedded
+    private NextPayment nextPayment;
+//    private Double monthlyFee;
+//    private String paymentDueDate;
 
     public Membership(String membershipId){
 
     }
 
-    public Membership(Type membershipType, Status status, BillingType billingType, Double cardFee, Double registrationFee, Double monthlyFee) {
+    public Membership(Type membershipType, Status status, BillingType billingType, InitialFees initialFees, NextPayment nextPayment) {
         this.membershipIdentifier = new MembershipIdentifier();
         this.membershipType = membershipType;
         this.status = status;
         this.billingType = billingType;
-        this.cardFee = cardFee;
-        this.registrationFee = registrationFee;
-        this.monthlyFee = monthlyFee;
+        this.initialFees = initialFees;
+        this.nextPayment = nextPayment;
+//        this.cardFee = cardFee;
+//        this.registrationFee = registrationFee;
+//        this.monthlyFee = monthlyFee;
     }
 
 
