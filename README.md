@@ -9,8 +9,3 @@ entities of this project. The project is setup using SpringBoot and Java, as wel
 //TODO Insert DDD Domain model and explanation
 
 ## Code
-//TODO Make it a RESTful app with HATOAS
-
-//TODO Implement membership and purchases subdomains
-
-//TODO Understand how the aggregate will work and define and implement an aggregate invariant.
