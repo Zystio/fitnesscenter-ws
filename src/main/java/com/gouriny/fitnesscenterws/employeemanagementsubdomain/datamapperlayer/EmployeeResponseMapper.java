@@ -39,6 +39,12 @@ public interface EmployeeResponseMapper {
                         .getEmployeeByEmployeeId(UUID.fromString(model.getEmployeeId())))
                         .withSelfRel();
         model.add(selfLink);
+
+        Link allEmployeesLink =
+                linkTo(methodOn(EmployeeController.class)
+                        .getAllEmployees())
+                        .withRel("allEmployees");
+        model.add(allEmployeesLink);
     }
 
 }

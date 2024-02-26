@@ -40,6 +40,12 @@ public interface MembershipResponseMapper {
                         .getMembershipByMembershipId(UUID.fromString(model.getMembershipId())))
                         .withSelfRel();
         model.add(selfLink);
+
+        Link allMembershipsLink =
+                linkTo(methodOn(MembershipController.class)
+                        .getAllMemberships())
+                        .withRel("allMemberships");
+        model.add(allMembershipsLink);
     }
 }
 

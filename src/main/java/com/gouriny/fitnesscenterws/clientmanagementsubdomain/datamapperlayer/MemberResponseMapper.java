@@ -37,5 +37,11 @@ public interface MemberResponseMapper {
                         .getMemberByMemberId(UUID.fromString(model.getMemberId())))
                         .withSelfRel();
         model.add(selfLink);
+
+        Link allMembersLink =
+                linkTo(methodOn(MemberController.class)
+                        .getAllMembers())
+                        .withRel("allMembers");
+        model.add(allMembersLink);
     }
 }

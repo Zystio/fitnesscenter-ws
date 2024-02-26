@@ -1,12 +1,14 @@
 package com.gouriny.fitnesscenterws.purchasessubdomain.presentationlayer;
 
 import com.gouriny.fitnesscenterws.purchasessubdomain.businesslayer.PurchaseService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("api/v1/members/{memberId}/purchases")
 public class MemberPurchaseController {

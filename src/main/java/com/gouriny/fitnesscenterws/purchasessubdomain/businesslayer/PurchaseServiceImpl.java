@@ -54,7 +54,7 @@ public class PurchaseServiceImpl implements PurchaseService {
     public List<PurchaseResponseModel> getAllPurchasesForMember(String memberId) {
         Member member = memberRepository.findMemberByMemberIdentifier_MemberId(memberId);
         if (member == null) {
-            throw new NotFoundException("MemberId provided is invalid" + memberId);
+            throw new NotFoundException("MemberId provided is invalid " + memberId);
         }
 
         List<PurchaseResponseModel> purchaseResponseModelList = new ArrayList<>();
@@ -63,11 +63,11 @@ public class PurchaseServiceImpl implements PurchaseService {
         purchaseList.forEach(purchase -> {
               Employee employee = employeeRepository.findByEmployeeIdentifier_EmployeeId(purchase.getEmployeeIdentifier().getEmployeeId());
                 if (employee == null) {
-                    throw new NotFoundException("EmployeeId provided is invalid" + purchase.getEmployeeIdentifier().getEmployeeId());
+                    throw new NotFoundException("EmployeeId provided is invalid " + purchase.getEmployeeIdentifier().getEmployeeId());
                 }
                 Membership membership = membershipRepository.findByMembershipIdentifier_MembershipId(purchase.getMembershipIdentifier().getMembershipId());
                 if (membership == null) {
-                    throw new NotFoundException("MembershipId provided is invalid" + purchase.getMembershipIdentifier().getMembershipId());
+                    throw new NotFoundException("MembershipId provided is invalid " + purchase.getMembershipIdentifier().getMembershipId());
                 }
                 purchaseResponseModelList.add(purchaseResponseMapper.entityToResponseModel(purchase, member, employee, membership));
             });
@@ -82,23 +82,23 @@ public class PurchaseServiceImpl implements PurchaseService {
         Member member = memberRepository.findMemberByMemberIdentifier_MemberId(memberId);
 
         if (member == null) {
-            throw new InvalidInputException("MemberId provided is invalid" + memberId);
+            throw new InvalidInputException("MemberId provided is invalid " + memberId);
         }
 
         Purchase purchase = purchaseRepository.findPurchaseByMemberIdentifier_MemberIdAndPurchaseIdentifier_PurchaseId(memberId, purchaseId);
 
         if (purchase == null) {
-            throw new NotFoundException("PurchaseId provided is unknown" + purchaseId);
+            throw new NotFoundException("PurchaseId provided is unknown " + purchaseId);
         }
 
         Employee employee = employeeRepository.findByEmployeeIdentifier_EmployeeId(purchase.getEmployeeIdentifier().getEmployeeId());
         if (employee == null) {
-            throw new NotFoundException("EmployeeId provided is invalid" + purchase.getEmployeeIdentifier().getEmployeeId());
+            throw new NotFoundException("EmployeeId provided is invalid " + purchase.getEmployeeIdentifier().getEmployeeId());
         }
 
         Membership membership = membershipRepository.findByMembershipIdentifier_MembershipId(purchase.getMembershipIdentifier().getMembershipId());
         if (membership == null) {
-            throw new NotFoundException("MembershipId provided is invalid" + purchase.getMembershipIdentifier().getMembershipId());
+            throw new NotFoundException("MembershipId provided is invalid " + purchase.getMembershipIdentifier().getMembershipId());
         }
 
         return purchaseResponseMapper.entityToResponseModel(purchase, member, employee, membership);
@@ -111,17 +111,17 @@ public class PurchaseServiceImpl implements PurchaseService {
         //verify if member exists
         Member member = memberRepository.findMemberByMemberIdentifier_MemberId(memberId);
         if (member == null) {
-            throw new NotFoundException("MemberId provided is invalid" + memberId);
+            throw new NotFoundException("MemberId provided is invalid " + memberId);
         }
         //verify if employee exists
         Employee employee = employeeRepository.findByEmployeeIdentifier_EmployeeId(purchaseRequestModel.getEmployeeId());
         if (employee == null) {
-            throw new NotFoundException("EmployeeId provided is invalid" + purchaseRequestModel.getEmployeeId());
+            throw new NotFoundException("EmployeeId provided is invalid " + purchaseRequestModel.getEmployeeId());
         }
         //verify if membership exists
         Membership membership = membershipRepository.findByMembershipIdentifier_MembershipId(purchaseRequestModel.getMembershipId());
         if (membership == null) {
-            throw new NotFoundException("MembershipId provided is invalid" + purchaseRequestModel.getMembershipId());
+            throw new NotFoundException("MembershipId provided is invalid " + purchaseRequestModel.getMembershipId());
         }
 
         Purchase purchase = purchaseRequestMapper.requestModelToEntity(purchaseRequestModel, new PurchaseIdentifier(),
@@ -135,22 +135,22 @@ public class PurchaseServiceImpl implements PurchaseService {
     public PurchaseResponseModel updateMemberPurchase(PurchaseRequestModel purchaseRequestModel, String memberId, String purchaseId) {
         Purchase existingPurchase = purchaseRepository.findPurchaseByMemberIdentifier_MemberIdAndPurchaseIdentifier_PurchaseId(memberId, purchaseId);
         if (existingPurchase == null) {
-            throw new NotFoundException("PurchaseId provided is unknown" + purchaseId);
+            throw new NotFoundException("PurchaseId provided is unknown " + purchaseId);
         }
 
         Member existingMember = memberRepository.findMemberByMemberIdentifier_MemberId(memberId);
         if (existingMember == null) {
-            throw new NotFoundException("MemberId provided is invalid" + memberId);
+            throw new NotFoundException("MemberId provided is invalid " + memberId);
         }
         //verify if employee exists
         Employee existingEmployee = employeeRepository.findByEmployeeIdentifier_EmployeeId(purchaseRequestModel.getEmployeeId());
         if (existingEmployee == null) {
-            throw new NotFoundException("EmployeeId provided is invalid" + purchaseRequestModel.getEmployeeId());
+            throw new NotFoundException("EmployeeId provided is invalid " + purchaseRequestModel.getEmployeeId());
         }
         //verify if membership exists
         Membership existingMembership = membershipRepository.findByMembershipIdentifier_MembershipId(purchaseRequestModel.getMembershipId());
         if (existingMembership == null) {
-            throw new NotFoundException("MembershipId provided is invalid" + purchaseRequestModel.getMembershipId());
+            throw new NotFoundException("MembershipId provided is invalid " + purchaseRequestModel.getMembershipId());
         }
 
         Purchase purchase = purchaseRequestMapper.requestModelToEntity(purchaseRequestModel, existingPurchase.getPurchaseIdentifier(),
@@ -181,16 +181,22 @@ public class PurchaseServiceImpl implements PurchaseService {
 
         Purchase purchase = purchaseRepository.findPurchaseByMemberIdentifier_MemberIdAndPurchaseIdentifier_PurchaseId(memberId, purchaseId);
         if (purchase == null) {
-            throw new NotFoundException("PurchaseId provided is unknown" + purchaseId);
+            throw new NotFoundException("PurchaseId provided is unknown " + purchaseId);
+        }
+
+        Employee employee = employeeRepository.findByEmployeeIdentifier_EmployeeId(purchase.getEmployeeIdentifier().getEmployeeId());
+        if (employee == null) {
+            throw new NotFoundException("EmployeeId provided is invalid " + purchase.getEmployeeIdentifier().getEmployeeId());
         }
 
         Membership membership = membershipRepository.findByMembershipIdentifier_MembershipId(purchase.getMembershipIdentifier().getMembershipId());
         if (membership == null) {
-            throw new NotFoundException("MembershipId provided is invalid" + purchase.getMembershipIdentifier().getMembershipId());
+            throw new NotFoundException("MembershipId provided is invalid " + purchase.getMembershipIdentifier().getMembershipId());
         }
 
-        membership.setStatus(Status.valueOf("EXPIRED"));
 
+        membership.setStatus(Status.valueOf("Expired"));
+        membershipRepository.save(membership);
 
     }
 

@@ -37,6 +37,11 @@ public class MemberServiceImpl implements MemberService {
     public MemberResponseModel getMemberByMemberId(UUID memberId) {
 
         Member member = memberRepository.findMemberByMemberIdentifier_MemberId(memberId.toString());
+
+        if (member == null) {
+            throw new NotFoundException("Unknown memberId: " + memberId);
+        }
+
         return memberResponseMapper.entityToResponseModel(member);
     }
 

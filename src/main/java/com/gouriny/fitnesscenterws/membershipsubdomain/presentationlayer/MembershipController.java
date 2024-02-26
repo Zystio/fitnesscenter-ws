@@ -3,6 +3,7 @@ package com.gouriny.fitnesscenterws.membershipsubdomain.presentationlayer;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer.MemberRequestModel;
 import com.gouriny.fitnesscenterws.clientmanagementsubdomain.presentationlayer.MemberResponseModel;
 import com.gouriny.fitnesscenterws.membershipsubdomain.businesslayer.MembershipService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
+@Slf4j
 @RestController
 @RequestMapping("api/v1/memberships")
 public class MembershipController {
@@ -20,23 +22,23 @@ public class MembershipController {
         this.membershipService = membershipService;
     }
 
-    @GetMapping()
+    @GetMapping(produces = "application/json")
     public ResponseEntity<List<MembershipResponseModel>> getAllMemberships() {
         return ResponseEntity.ok().body(membershipService.getAllMemberships());
     }
 
-    @GetMapping("/{membershipId}")
+    @GetMapping(value = "/{membershipId}", produces = "application/json")
     public ResponseEntity<MembershipResponseModel> getMembershipByMembershipId(@PathVariable UUID membershipId) {
         return ResponseEntity.ok().body(membershipService.getMembershipByMembershipId(membershipId));
     }
 
-    @PostMapping()
+    @PostMapping(produces = "application/json", consumes = "application/json")
     public ResponseEntity<MembershipResponseModel> addMembership(@RequestBody MembershipRequestModel membershipRequestModel) {
         MembershipResponseModel membershipResponseModel = membershipService.addMembership(membershipRequestModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(membershipResponseModel);
     }
 
-    @PutMapping("/{membershipId}")
+    @PutMapping(value = "/{membershipId}", produces = "application/json", consumes = "application/json")
     public ResponseEntity<MembershipResponseModel> updateMembership(@RequestBody MembershipRequestModel membershipRequestModel, @PathVariable UUID membershipId) {
         MembershipResponseModel membershipResponseModel = membershipService.updateMembership(membershipRequestModel, membershipId);
         return ResponseEntity.status(HttpStatus.OK).body(membershipResponseModel);

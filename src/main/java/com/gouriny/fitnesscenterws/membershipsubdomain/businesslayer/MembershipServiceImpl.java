@@ -35,6 +35,11 @@ public class MembershipServiceImpl implements MembershipService{
     @Override
     public MembershipResponseModel getMembershipByMembershipId(UUID membershipId) {
         Membership membership = membershipRepository.findByMembershipIdentifier_MembershipId(membershipId.toString());
+
+        if (membership == null){
+            throw new NotFoundException("Unknown membershipId: " + membershipId);
+        }
+
         return membershipResponseMapper.entityToResponseModel(membership);
     }
     @Override

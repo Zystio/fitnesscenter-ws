@@ -15,7 +15,6 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-
 public class PurchaseResponseModel extends RepresentationModel<PurchaseResponseModel>{
     private String purchaseId;
 

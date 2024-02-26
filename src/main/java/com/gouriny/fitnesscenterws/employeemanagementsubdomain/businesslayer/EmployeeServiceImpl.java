@@ -35,6 +35,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public EmployeeResponseModel getEmployeeByEmployeeId(UUID employeeId) {
         Employee employee = employeeRepository.findByEmployeeIdentifier_EmployeeId(employeeId.toString());
+
+        if (employee == null) {
+            throw new NotFoundException("Unknown employeeId: " + employeeId);
+        }
+
         return employeeResponseMapper.entityToResponseModel(employee);
     }
 
