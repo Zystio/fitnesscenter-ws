@@ -114,6 +114,9 @@ Package "Employee Management Subdomain" <<Rectangle>> #aliceblue {
     }
 
 Package "Sale Management Subdomain" <<Rectangle>> #aliceblue {
+
+       note "Invariant: when a membership expires, it is removed from the public purchases list, ex: the membership status is set as 'EXPIRED' " as purchaseInvariant
+
         AGGREGATE_ROOT_ENTITY(Purchase) #bisque {
         + paymentType: String
         + creditCardType: String
