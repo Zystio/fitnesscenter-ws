@@ -18,41 +18,192 @@ skinparam rectangle {
 
 rectangle "Fitness Center" as BoundedContextCarDealership #line.dashed {
 
- Package "Client Management Subdomain" <<Rectangle>> #plum{
+ Package "Member Management Subdomain" <<Rectangle>> #aliceblue {
 
-        ENTITY(Client) #orchid {
+        ENTITY(Member) #bisque {
             + string: firstName
             + string: lastName
-            + string: membershipId
             + string: emailAddress
             + string: phoneNumber
-            + string: streetAddress
-            + string: city
-            + string: province
-            + string: country
-            + string: postalCode
+            + string: address
         }
-        VALUE_OBJECT(ClientIdentifier) #mediumslateblue{
-            + clientId : UUID
+        VALUE_OBJECT(MemberIdentifier) #bisque{
+            + memberId : UUID
         }
-
-        VALUE_OBJECT(Purchases) #Bisque{
-            purchases: list[PurchaseIdentifier]
+        VALUE_OBJECT(Purchases) #bisque{
+            + purchases: List[purchaseIdentifier]
         }
 
-        VALUE_OBJECT(ClientAddress) #Bisque{
+
+        VALUE_OBJECT(MemberAddress) #Bisque{
                 + street: String
                 + city: String
                 + province: String
                 + country: String
         }
-        VALUE_OBJECT(ClientPhoneNumber) #Bisque {
+        VALUE_OBJECT(MemberPhoneNumber) #Bisque {
             + type: String
             + number: String
         }
 
-        Client o--> "1" ClientAddress
-        Client o--> "1" ClientPhoneNumber
-        Client "1" o--> "1" ClientIdentifier
-        Client o--> "1" Purchases
+        Member o--> "1" MemberAddress
+        Member o--> "1" MemberPhoneNumber
+        Member "1" o--> "1" MemberIdentifier
+        Member o--> "1" Purchases
+    }
+
+Package "Employee Management Subdomain" <<Rectangle>> #aliceblue {
+
+        ENTITY(Employee) #bisque {
+            + string: firstName
+            + string: lastName
+            + string: emailAddress
+            + string: phoneNumber
+            + string: address
+            + string: department
+        }
+        VALUE_OBJECT(EmployeeIdentifier) #bisque{
+            + employeeId : UUID
+        }
+
+        VALUE_OBJECT(EmployeeAddress) #Bisque{
+                + street: String
+                + city: String
+                + province: String
+                + country: String
+        }
+        VALUE_OBJECT(EmployeePhoneNumber) #Bisque {
+            + type: String
+            + number: String
+        }
+
+        Employee o--> "1" EmployeeAddress
+        Employee o--> "1" EmployeePhoneNumber
+        Employee "1" o--> "1" EmployeeIdentifier
+    }
+
+
+
+    Package "Membership Management Subdomain" <<Rectangle>> #aliceblue {
+        AGGREGATE_ROOT(Membership) #bisque {
+            + type: String
+            + status: String
+            + billingType: BillingType
+            + initialFees: InitialFees
+            + nextPayment: nextPayment
+        }
+        VALUE_OBJECT(MembershipIdentifier) #bisque{
+            + membershipId : UUID
+        }
+        VALUE_OBJECT(BillingType) #Bisque{
+            + type: String
+            + amount: Double
+        }
+        VALUE_OBJECT(InitialFees) #Bisque{
+            + billingType: String
+        }
+        VALUE_OBJECT(NextPayment) #Bisque{
+            + dueDate: Date
+            + amountDue: Double
+        }
+
+        Membership "1" o--> "1" MembershipIdentifier
+        Membership "1" o--> "1" InitialFees
+        Membership "1" o--> "1" NextPayment
+        Membership "1" o--> "1" BillingType
+    }
+
+Package "Sale Management Subdomain" <<Rectangle>> #aliceblue {
+        AGGREGATE_ROOT_ENTITY(Purchase) #bisque {
+        + paymentType: String
+        + creditCardType: String
+        + paymentType: String
+        + startDate: Date
+        }
+        VALUE_OBJECT(PurchaseIdentifier) #bisque{
+            + saleId : UUID
+        }
+        VALUE_OBJECT(PaymentType) #Bisque{
+            + type: String
+        }
+        VALUE_OBJECT(CreditCardType) #Bisque{
+            + type: String
+        }
+
+
+        Purchase "1" o--> "1" PurchaseIdentifier
+        Purchase "1" o--> "1" PaymentType
+        Purchase "1" o--> "1" CreditCardType
+        MemberIdentifier "1" o--> "1" Purchase
+        EmployeeIdentifier "1" o--> "1" Purchase
+        MembershipIdentifier "1" o--> "1" Purchase
+
+        Purchases *-- "0..*" PurchaseIdentifier
+
+    }
+
+    Package "Personal Training subdomain" <<Rectangle>> #grey {
+        AGGREGATE_ROOT_ENTITY(PersonalTrainer) #slategrey {
+            + schedule : Schedule
+            + specialization: String
+
+        }
+
+        VALUE_OBJECT(Schedule) #slategrey{
+            + days: String
+            + times: String
+        }
+
+
+
+
+        PersonalTrainer "1" o--> "1" EmployeeIdentifier
+        PersonalTrainer "1" o--> "1" MemberIdentifier
+        PersonalTrainer "1" o--> "1" Schedule
+    }
+
+    Package "Equipment Management Subdomain" <<Rectangle>> #grey {
+        AGGREGATE(Equipment) #slategrey {
+            + type: String
+            + status: String
+            + quantity: Integer
+            + purchaseDate: Date
+            + warranty: Warranty
+        }
+        VALUE_OBJECT(EquipmentIdentifier) #slategrey{
+            + equipmentId : UUID
+        }
+        VALUE_OBJECT(Warranty) #slategrey{
+            + type: String
+            + duration: String
+        }
+
+        Equipment "1" o--> "1" EquipmentIdentifier
+        Equipment "1" o--> "1" Warranty
+    }
+
+    Package "Facility Management Subdomain" <<Rectangle>> #grey {
+        AGGREGATE(Facility) #slategrey {
+            + type: String
+            + status: String
+            + location: String
+            + capacity: Integer
+            + schedule: Schedule
+        }
+        VALUE_OBJECT(FacilityIdentifier) #slategrey{
+            + facilityId : UUID
+        }
+        VALUE_OBJECT(Schedule) #slategrey{
+            + days: String
+            + times: String
+        }
+
+        Facility "1" o--> "1" FacilityIdentifier
+        Facility "1" o--> "1" Schedule
+        FacilityIdentifier o--> EquipmentIdentifier
+        FacilityIdentifier o--> MembershipIdentifier
+    }
+}
+
+
 @enduml

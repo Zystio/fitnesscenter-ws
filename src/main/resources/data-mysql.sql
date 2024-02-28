@@ -2,26 +2,73 @@ insert into members (member_id, first_name, last_name, email_address, street_add
 insert into members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) values ('c8d41d17-68f9-4b2a-8a87-55db7d13d47f', 'François', 'Xavier', 'fxav@gmail.com', '73 Rue du Savoir', 'Brossard', 'Québec', 'Canada', 'J2Z 0L1');
 insert into members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) values ('a8759f44-fd54-4c72-91a6-c216ab6eb52c', 'Mary', 'Johnson', 'maryjohnson@yahoo.com', '456 Elm St', 'Vancouver', 'British Columbia', 'Canada', 'V6B 2N9');
 insert into members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) values ('b12a6c79-0a77-4217-a1cc-2e4d53e4c43d', 'John', 'Doe', 'johndoe@gmail.com', '789 Main St', 'Toronto', 'Ontario', 'Canada', 'M5V 2H1');
+INSERT INTO members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) VALUES ('d6e8a97b-1f7c-4a5d-ba20-5d4f673c14e1', 'Elena', 'Gagnon', 'egagnon@example.com', '145 Rue Notre-Dame Ouest', 'Montreal', 'Quebec', 'Canada', 'H2Y 1V9');
+INSERT INTO members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) VALUES ('f7c9b85a-2e6d-4b4c-ade9-6e8f7d6c5b4a', 'Lucas', 'Desjardins', 'ldesjardins@example.com', '789 Avenue Duluth Est', 'Montreal', 'Quebec', 'Canada', 'H2L 1A3');
+INSERT INTO members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) VALUES ('8d0c96b3-a5e4-4c3d-bdf0-7f9e8c7b6a5f', 'Julie', 'Lefebvre', 'julie.lefebvre@example.com', '456 Boulevard Saint-Laurent', 'Montreal', 'Quebec', 'Canada', 'H2T 1S6');
+INSERT INTO members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) VALUES ('f246b0f1-10d2-4999-bd8d-c3f0f4213d1c', 'Grace', 'Lee', 'grace.lee@example.com', '678 Birch St.', 'Mirabel', 'Quebec', 'Canada', 'J7J 2E8');
+INSERT INTO members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) VALUES ('9b3d2856-312a-4ab8-8848-3b5de63dd44e', 'Daniel', 'Chen', 'daniel.chen@example.com', '789 Elm Street', 'Saint-Jean-sur-Richelieu', 'Quebec', 'Canada', 'J3B 1E7');
+INSERT INTO members (member_id, first_name, last_name, email_address, street_address, city, province, country, postal_code) VALUES ('e3540a89-cb47-4c96-888e-ff96708db4d8', 'Keven', 'Lambert', 'keven.lambert@gmail.com', '72 Rue Perreault', 'Victoriaville', 'Quebec', 'Canada', 'G6P 1E4');
 
-insert into employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) values ('e3540a89-cb47-4c96-888e-ff96708db4d8', 'John', 'Doe', 'johndoe@gmail.com', 'SALES', '6753 Karmine St.', 'Montreal', 'Québec', 'Canada', 'J4Z0J2', 25000.00, 0.10);
+
+insert into employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) values ('e3540a89-cb47-4c96-888e-ff96708db4d8', 'John', 'Doe', 'johndoe@gmail.com', 'SALES', '6753 Karmine St.', 'Montreal', 'Quebec', 'Canada', 'J4Z0J2', 25000.00, 0.10);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('d4a2c91a-8c1b-4c2b-826b-19af0c9f92b6', 'Jessica', 'Taylor', 'jessica.taylor@hotmail.com', 'SALES', '567 Creative Ave.', 'Montreal', 'Quebec', 'Canada', 'J3O0K2', 34000.00, 0.08);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('a1c9e87b-4a7e-4b2b-9e6e-684a9d4e4b6d', 'Christopher', 'Lee', 'chris.lee@gmail.com', 'SALES', '789 Hampton Rd.', 'Brossard', 'Quebec', 'Canada', '3J2L2M', 32000.00, 0.09);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('c3e9a54d-7b5a-4c6f-81b9-3d8c2b0e2c1e', 'Michael', 'Johnson', 'michael.johnson@yahoo.com', 'SALES', '456 Big Ave.', 'Laval', 'Quebec', 'Canada', '5M3N8B', 33000.00, 0.07);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('d4f0b32e-8c9b-4d8a-ae7c-1e9d3c4b2a5f', 'Emily', 'Brown', 'emily.brown@gmail.com', 'SALES', '789 Kimberly Blvd.', 'Dorval', 'Quebec', 'Canada', '7P5R2T', 34000.00, 0.06);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('e3540a27-ab47-4c96-333e-ff96708db4d8', 'Daniel', 'Rodriguez', 'daniel.rodriguez@outlook.com', 'SALES', '567 Matte Rd.', 'Saint-Jean-sur-Richelieu', 'Quebec', 'Canada', '1N8Q3Z', 38000.00, 0.03);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('8bdaa22d-f2e2-496c-884f-6b0a0b3b4282', 'Andrew', 'Walker', 'andrew.walker@champlaincollege.com', 'SALES', '987 Trudeau Rd.', 'Montreal', 'Quebec', 'Canada', '1Z3X4C', 42000.00, 0.08);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('e8693f9a-1d45-4a2b-97c8-9d7f6c5a3b2e', 'Michelle', 'Hall', 'michelle.hall@gmail.com', 'SALES', '890 Riverside Dr.', 'Brossard', 'Quebec', 'Canada', '2P4S6A', 41000.00, 0.09);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('e9355c87-6f4a-4c3f-96b9-8e7f6d2a3e4b', 'Kevin', 'Young', 'kevin.young@hotmail.com', 'SALES', '789 Southside Blvd.', 'Saint-Lambert', 'Quebec', 'Canada', '3A6B9C', 40000.00, 0.01);
+INSERT INTO employees (employee_id, first_name, last_name, email_address, department, street_address, city, province, country, postal_code, salary, commission_rate) VALUES ('e3458a74-5f4b-4c3f-96b9-8e7f6d2a3e4c', 'Samantha', 'Hill', 'samantha.hill@yahoo.com', 'SALES','756 Northside Blvd.', 'Saint-Lambert', 'Quebec', 'Canada', '3A6B9C', 40000.00, 0.01);
 
 
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('a3540a89-cb47-4c96-888e-ff96708db4d8', 'VIP', 'Active', 'MONTHLY',19.99,59.99,24.99, 'September 12, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('b2240a89-ab22-4c96-333e-ee94708ae4d8', 'VIP', 'Expired', 'MONTHLY',19.99,59.99,24.99, 'EXPIRED');
 
-insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date)
-values ('a3540a89-cb47-4c96-888e-ff96708db4d8', 'VIP', 'Active', 'MONTHLY',19.99,59.99,24.99, 'September 1, 2020');
-insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date)
-values ('b3540a89-cb47-4c96-888e-ff96708db4d8', 'VIP', 'Active', 'MONTHLY',9.99,29.99,14.99, 'September 1, 2020');
-insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date)
-values ('c3540a89-cb47-4c96-888e-ff96708db4d8', 'VIP', 'Active', 'MONTHLY',9.99,29.99,14.99, 'September 1, 2020');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('b3540a89-cb47-4c96-888e-ff96708db4d8', 'VIP', 'Active', 'MONTHLY',19.99,59.99,24.99, 'November 1, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('c7d3e4f6-1a9b-4c2d-8e5f-0b3a7d6e9f8c', 'VIP', 'Active', 'MONTHLY',19.99,59.99,24.99, 'September 1, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('b2a8b4d6-9e3f-4c1a-7b5d-0e9c8a2b4f6d', 'Athletics', 'Active', 'MONTHLY',19.99,39.99,99.99, 'December 14, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('f8e5f7d3-4b9a-1c2d-6e3f-5a8b9c2d4e6f', 'Athletics', 'Active', 'MONTHLY',19.99,39.99,99.99, 'December 28, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('a6f9a3b7-2d4e-5b9c-1a8d-6f3e2c4b5a9', 'Regular', 'Active', 'MONTHLY',19.99,69.99,14.99, 'March 7, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('b3a7d6e9-8c2b-4f5a-1d3e-9b7c8a2b4d6', 'Regular', 'Active', 'MONTHLY',19.99,69.99,14.99, 'April 20, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('e4d8e2f6-7a1b-3c5d-9e4f-8b2a7c6d9e1', 'VIP', 'Active', 'MONTHLY',19.99,59.99,24.99, 'May 16, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('c1b5a9c3-8d7e-6f9a-2b1c-4d5e6f7a8b9', 'VIP', 'Active', 'MONTHLY',19.99,59.99,24.99, 'June 30, 2024');
+insert into memberships (membership_id, membership_type, status, billing_type, card_fee, registration_fee, payment, payment_due_date) values ('d8d4e1f6-9a7b-5c3d-2e8f-4a6b7c5d9e1', 'Athletics', 'Active', 'MONTHLY',19.99,39.99,99.99, 'July 15, 2024');
 
-insert into member_phonenumbers(member_id, type, number)
-values (1, 'WORK', '515-555-5555');
-insert into member_phonenumbers(member_id, type, number)
-values (1, 'MOBILE', '514-555-4444');
 
-insert into employee_phonenumbers(employee_id, type, number)
-values (1, 'WORK', '515-123-1234');
-insert into employee_phonenumbers(employee_id, type, number)
-values (1, 'MOBILE', '514-333-1233');
+insert into member_phonenumbers(member_id, type, number) values (1, 'WORK', '515-555-5555');
+insert into member_phonenumbers(member_id, type, number) values (1, 'MOBILE', '514-555-4444');
+insert into member_phonenumbers(member_id, type, number) values (2, 'MOBILE', '514-123-1233');
+insert into member_phonenumbers(member_id, type, number) values (3, 'MOBILE', '514-345-2134');
+insert into member_phonenumbers(member_id, type, number) values (4, 'MOBILE', '438-257-8694');
+insert into member_phonenumbers(member_id, type, number) values (5, 'MOBILE', '514-860-1057');
+insert into member_phonenumbers(member_id, type, number) values (6, 'MOBILE', '450-285-0087');
+insert into member_phonenumbers(member_id, type, number) values (7, 'MOBILE', '514-697-6673');
+insert into member_phonenumbers(member_id, type, number) values (8, 'MOBILE', '514-112-8695');
+insert into member_phonenumbers(member_id, type, number) values (9, 'MOBILE', '514-212-7754');
+insert into member_phonenumbers(member_id, type, number) values (10, 'MOBILE', '514-826-1729');
 
-insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p3540a89-cb47-4c96-888e-ff96708db4d8', 'c3540a89-cb47-4c96-888e-ff96708db4d8', 'a3540a89-cb47-4c96-888e-ff96708db4d8','e3540a89-cb47-4c96-888e-ff96708db4d8','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into employee_phonenumbers(employee_id, type, number) values (1, 'WORK', '515-123-1234');
+insert into employee_phonenumbers(employee_id, type, number) values (1, 'MOBILE', '514-333-1233');
+insert into employee_phonenumbers(employee_id, type, number) values (2, 'MOBILE', '416-555-1234');
+insert into employee_phonenumbers(employee_id, type, number) values (3, 'MOBILE', '514-555-5678');
+insert into employee_phonenumbers(employee_id, type, number) values (4, 'MOBILE', '604-555-9876');
+insert into employee_phonenumbers(employee_id, type, number) values (5, 'MOBILE', '613-555-4321');
+insert into employee_phonenumbers(employee_id, type, number) values (6, 'MOBILE', '780-555-8765');
+insert into employee_phonenumbers(employee_id, type, number) values (7, 'MOBILE', '905-555-2109');
+insert into employee_phonenumbers(employee_id, type, number) values (8, 'MOBILE', '902-555-3546');
+insert into employee_phonenumbers(employee_id, type, number) values (9, 'MOBILE', '819-555-7890');
+insert into employee_phonenumbers(employee_id, type, number) values (10, 'MOBILE', '902-555-2468');
+
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p3540a89-cb47-4c96-888e-ff96708db4d8', 'c3540a89-cb47-4c96-888e-ff96708db4d8', 'a3540a89-cb47-4c96-888e-ff96708db4d8','e3540a89-cb47-4c96-888e-ff96708db4d8','CREDIT_CARD', 'VISA', '2024-02-24');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p2240a89-ab22-4c96-333e-ee94708ae4d8', 'c3540a89-cb47-4c96-888e-ff96708db4d8', 'b2240a89-ab22-4c96-333e-ee94708ae4d8','d4a2c91a-8c1b-4c2b-826b-19af0c9f92b6','CREDIT_CARD', 'VISA', '2023-02-24');
+
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p1462b3f-7c58-4e73-916d-0a5e3c9f8b2a', 'c8d41d17-68f9-4b2a-8a87-55db7d13d47f', 'b3540a89-cb47-4c96-888e-ff96708db4d8','d4a2c91a-8c1b-4c2b-826b-19af0c9f92b6','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p7d3e4f6-1a9b-4c2d-8e5f-0b3a7d6e9f8c', 'a8759f44-fd54-4c72-91a6-c216ab6eb52c', 'c7d3e4f6-1a9b-4c2d-8e5f-0b3a7d6e9f8c','a1c9e87b-4a7e-4b2b-9e6e-684a9d4e4b6d','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p2a8b4d6-9e3f-4c1a-7b5d-0e9c8a2b4f6d', 'b12a6c79-0a77-4217-a1cc-2e4d53e4c43d', 'b2a8b4d6-9e3f-4c1a-7b5d-0e9c8a2b4f6d','c3e9a54d-7b5a-4c6f-81b9-3d8c2b0e2c1e','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p8e5f7d3-4b9a-1c2d-6e3f-5a8b9c2d4e6f', 'd6e8a97b-1f7c-4a5d-ba20-5d4f673c14e1', 'f8e5f7d3-4b9a-1c2d-6e3f-5a8b9c2d4e6f','d4f0b32e-8c9b-4d8a-ae7c-1e9d3c4b2a5f','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p6f9a3b7-2d4e-5b9c-1a8d-6f3e2c4b5a9', 'f7c9b85a-2e6d-4b4c-ade9-6e8f7d6c5b4a', 'a6f9a3b7-2d4e-5b9c-1a8d-6f3e2c4b5a9','e3540a27-ab47-4c96-333e-ff96708db4d8','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p3a7d6e9-8c2b-4f5a-1d3e-9b7c8a2b4d6', '8d0c96b3-a5e4-4c3d-bdf0-7f9e8c7b6a5f', 'b3a7d6e9-8c2b-4f5a-1d3e-9b7c8a2b4d6','8bdaa22d-f2e2-496c-884f-6b0a0b3b4282','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p8d4e1f6-9a7b-5c3d-2e8f-4a6b7c5d9e1', 'f246b0f1-10d2-4999-bd8d-c3f0f4213d1c', 'd8d4e1f6-9a7b-5c3d-2e8f-4a6b7c5d9e1','e8693f9a-1d45-4a2b-97c8-9d7f6c5a3b2e','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p1b5a9c3-8d7e-6f9a-2b1c-4d5e6f7a8b9', '9b3d2856-312a-4ab8-8848-3b5de63dd44e', 'c1b5a9c3-8d7e-6f9a-2b1c-4d5e6f7a8b9','e9355c87-6f4a-4c3f-96b9-8e7f6d2a3e4b','CREDIT_CARD', 'VISA', '2020-01-01');
+insert into purchases (purchase_id, member_id, membership_id, employee_id, payment_type, credit_card_type, start_date) values ('p8d4e1f6-9a7b-5c3d-2e8f-4a6b7c5d9e1', 'e3540a89-cb47-4c96-888e-ff96708db4d8', 'e4d8e2f6-7a1b-3c5d-9e4f-8b2a7c6d9e1','e3540a89-cb47-4c96-888e-ff96708db4d8','CREDIT_CARD', 'VISA', '2020-01-01');
